@@ -1,0 +1,7 @@
+body {
+  background-color: rgb(123, 214, 214);
+}
+.header {
+  text-align: center;
+  border: 2px solid black;
+}

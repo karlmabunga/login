@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import Login from './components/App.jsx';
 
 
 ReactDOM.render(
-  <App />,
+  <Login />,
   document.getElementById('app')
 );
