@@ -1,7 +1,18 @@
 body {
   background-color: rgb(123, 214, 214);
 }
+.app {
+  text-align: center;
+}
 .header {
   text-align: center;
   border: 2px solid black;
+}
+.signup {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.signup:hover {
+  color: blue;
 }
