@@ -16,3 +16,6 @@ body {
 .signup:hover {
   color: blue;
 }
+.text-warning {
+  color: red;
+}
