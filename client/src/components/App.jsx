@@ -18,7 +18,7 @@ export default function Login () {
   const validateInput = (e) => {
     e.preventDefault()
 
-    // input object
+    // using input object
     // const {email, password} = input;
 
     let emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/
@@ -35,38 +35,39 @@ export default function Login () {
       isValid = false;
     }
     setErrors(errors);
+    // setInput({email: '', password: ''})
     return isValid;
   }
 
   // below is using separate state of email and password
 
-  return (
-    <div className='App'>
-      <h2 className='header'>Login Below</h2>
-      <form>
-        <input name='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} value={email}/>
-        <div className='text-warning'>{errors.email}</div>
-        <input type='password' name='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-        <div className='text-warning'>{errors.password}</div>
-        <button type='submit' onClick={(e) => { validateInput(e); setEmail(''); setPassword(''); }}>Login</button>
-      </form>
-      <button className='signup'>Sign Up</button>
-    </div >
-  )
-
-  // below is using input object state
-
   // return (
   //   <div className='App'>
   //     <h2 className='header'>Login Below</h2>
   //     <form>
-  //       <input name='email' placeholder='Email' onChange={(e) => handleInput(e)} value={input.email}/>
+  //       <input name='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} value={email}/>
   //       <div className='text-warning'>{errors.email}</div>
-  //       <input type='password' name='password' placeholder='Password' onChange={(e) => handleInput(e)} value={input.password}/>
+  //       <input type='password' name='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} value={password}/>
   //       <div className='text-warning'>{errors.password}</div>
-  //       <button type='submit' onClick={(e) => validateInput(e)}>Login</button>
+  //       <button type='submit' onClick={(e) => { validateInput(e); setEmail(''); setPassword(''); }}>Login</button>
   //     </form>
   //     <button className='signup'>Sign Up</button>
   //   </div >
   // )
+
+  // below is using input object state
+
+  return (
+    <div className='App'>
+      <h2 className='header'>Login Below</h2>
+      <form>
+        <input name='email' placeholder='Email' onChange={(e) => handleInput(e)} value={input.email}></input>
+        <div className='text-warning'>{errors.email}</div>
+        <input type='password' name='password' placeholder='Password' onChange={(e) => handleInput(e)} value={input.password}></input>
+        <div className='text-warning'>{errors.password}</div>
+        <button type='submit' onClick={(e) => validateInput(e)}>Login</button>
+      </form>
+      <button className='signup'>Sign Up</button>
+    </div >
+  )
 };
